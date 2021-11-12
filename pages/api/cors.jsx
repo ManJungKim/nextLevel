@@ -1,3 +1,6 @@
+/* file_name : cors.jsx
+ * desc : 크로스 오리진 설정파일, 
+ */
 import Cors from 'cors'
 import initMiddleware from '../../lib/init-middleware'
 

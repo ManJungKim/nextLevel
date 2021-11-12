@@ -1,5 +1,5 @@
-/* title : user API
- * desc : ...REST API
+/* file_name : [id].jsx
+ * desc : user 동적 라우팅
  */
 export default function userHandler(req, res) {
   const {

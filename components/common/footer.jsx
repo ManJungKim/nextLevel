@@ -1,3 +1,6 @@
+/* file_name : Sidebar.jsx
+ * desc : 하단 푸터
+ */
 import { useRouter } from 'next/router'
 import styles from './footer.module.css'
 

@@ -1,3 +1,6 @@
+/* file_name : index.jsx
+ * desc : 레이아웃 본문 중, 게시판 메인 목록.
+ */
 import PostLink from './PostLink';
 import postsDummy from '../../components/posts/vo/postsDummy';
 

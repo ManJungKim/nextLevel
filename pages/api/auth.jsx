@@ -1,3 +1,6 @@
+/* file_name : auth.jsx
+ * desc : 로그인 할 때 쓰일 로직. JWT 토큰을 사용 할 예정.
+ */
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
