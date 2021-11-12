@@ -1,3 +1,9 @@
+/* file_name : index.jsx
+ * desc : 각 폴더경로의 메인 시작 페이지.
+          http://locahost:3000/ 와 같이, 
+          url에 아무것도 입력되지 않을 때 초기 인입페이지라 생각하면 됨.
+ */
+
 import styles from '../CSS/styles.module.css'
 import useSWR from 'swr'
 
