@@ -1,6 +1,15 @@
-<<<<<<< HEAD
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+공부용으로 적합합니다.
+대부분이 공식문서에서 튜토리얼 보고 긁어온 소스임.
+차후에도 보고 이해하기 편하도록 주석 달기로 했습니다.
+보고 이해안되면 알기쉬운 용어를 사용해서 재수정 바랍니다.
+
+vsc에서 yarn build
+npm run dev 바로 돌리면 됨.
+dependency 확인 후 npm install 하고 ㅇㅇ
 =======
-# nextLevel 
-nextLevel
->>>>>>> e776162b697642e6ef8db79e6b790af161c13408
+# nextLevel
+암온어 넥슽 넥스트레블레블 
+넥슽 넥스트레브레블
+절대적 룰을 쥐켜, 내소늘 놓취마러
+광야를 거러과아
+아롸내 홈그롸운드
