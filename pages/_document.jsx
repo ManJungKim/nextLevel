@@ -1,3 +1,9 @@
+/* file_name : _document.jsx
+ * desc : 공통적으로 사용하는 메타 태그 등을 삽입할 수 있는 파일입니다.
+
+   \_document.js는 SPA에서 시작점이 되는 index.html이라고 생각하면 됩니다.
+   서버에서만 렌더링되며 onClick과 같은 이벤트 핸들러가 동작하지 않습니다.
+ */
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class RootDocument extends Document {
