@@ -19,6 +19,13 @@ import TopHeader from '../components/common/TopHeader'
 import Sidebar from '../components/common/sidebar'
 import Footer from '../components/common/footer'
 
+// 웹생명주기 report
+export function reportWebVitals(metric) {
+// 콘솔찍혀 나오는 것 보면 암. 
+// 귀찮으면 주석처리해서 꺼도 됨.
+  console.log(metric)
+}
+
 function MyApp({ Component, pageProps }) {
     return (
       <>
