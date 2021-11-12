@@ -1,3 +1,6 @@
+/* file_name : cookies.jsx
+ * desc : 쿠키파일. 핸들러에서 쿠키 생성 후 보내줌.
+ */
 import cookies from '../../utils/cookies'
 
 const handler = (req, res) => {

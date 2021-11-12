@@ -1,3 +1,6 @@
+/* file_name : postsDummy.jsx
+ * desc : 게시글 더미데이터
+ */
 const posts = [
     {id:1, title: "Post Title #1", content: "#1 content"},
     {id:2, title: "Post Title #2", content: "#2 content"},

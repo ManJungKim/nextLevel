@@ -1,4 +1,6 @@
-
+/* file_name : styles.module.css
+ * desc : 현재 index 하나에만 쓰이고 있는 파일입니다. CSS 공통관리용 폴더
+ */
 .hello {
     font: 15px Helvetica, Arial, sans-serif;
     background: #eee;

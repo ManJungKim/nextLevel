@@ -1,3 +1,6 @@
+/* file_name : [number].jsx
+ * desc : CRUD에서 read
+ */
 import { useRouter } from 'next/router'
 
 const Post = () => {

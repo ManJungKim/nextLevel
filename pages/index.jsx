@@ -22,7 +22,10 @@ export default function Home() {
         <p className="description">현재까지로는,<code>공식문서 API 사용법까지 배움</code> </p>
 
         <div className={styles.hello}>
-          <div>{`Cookie from response: "${data}"`}</div>  {/* 쿠키확인 */}
+          {`Cookie from response: "${data}"`} <br /> {/* 쿠키확인 */}
+          RESTURL_SPEAKERS {process.env.RESTURL_SPEAKERS} <br /> {/* config 확인 */}
+          RESTURL_SESSIONS {process.env.RESTURL_SESSIONS} <br /> {/* config 확인 */}
+          config 설정파일 체크 : {process.env.testKey} <br /> {/* config 확인 */}
         </div>
 
         <div className="grid">
@@ -30,24 +33,15 @@ export default function Home() {
             <h3>Documentation &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
-
           <a href="https://nextjs.org/learn" className="card">
             <h3>Learn &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
+          <a href="https://github.com/vercel/next.js/tree/master/examples" className="card">
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
+          <a href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" className="card">
             <h3>Deploy &rarr;</h3>
             <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
           </a>
