@@ -11,6 +11,7 @@ export default function topHeader() {
     
       <Link href="/">메인으로</Link>
       <Link href="/user">user</Link>
+      <Link href="/dbSample/pet">pet CRUD with mongoDB</Link>
       <Link href="/posts">posts</Link>
       <Link href="/posts/2023">2023</Link>
       <Link href="/posts/2022">2022</Link>

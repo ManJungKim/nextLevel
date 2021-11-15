@@ -37,9 +37,9 @@ const {
       testKey: 'config 파일 설정값 확인용도',
       GITHUB_ID: 'deerox999',
       GITHUB_SECRET: 'nextLevel',
-      NEXTAUTH_URL: 'http://localhost:3000'
+      NEXTAUTH_URL: 'http://localhost:3000',
+      MONGODB_URI: 'mongodb+srv://deerox999:deerox999@deerox1.tus0v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     }
-  
     // next.config.js object
     return {
       env,
