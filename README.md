@@ -1,5 +1,10 @@
+=======
 mongoDB 샘플 추가하였음. <br>
-pet CRUD 시스템. <br>
+pet CRUD 시스템. <br><br>
+
+DB설계중, <br>
+vercel 배포 <br>
+mongodb 자체호스팅 <br>
 =======
 공부용으로 적합합니다. <br>
 대부분이 공식문서에서 튜토리얼 보고 긁어온 소스임. <br>
