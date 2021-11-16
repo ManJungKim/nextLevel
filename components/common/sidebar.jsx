@@ -23,6 +23,9 @@ export default function Sidebar() {
       <Link href="/">
         <a>Home</a>
       </Link>
+      <Link href="/community">
+        <a>community</a>
+      </Link>
       <Link href="/dbSample/pet">
         <a>pet CRUD with mongoDB</a>
       </Link>

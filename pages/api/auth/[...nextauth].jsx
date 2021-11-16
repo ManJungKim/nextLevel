@@ -4,6 +4,7 @@ import FacebookProvider from "next-auth/providers/facebook"
 import GoogleProvider from "next-auth/providers/google"
 import GithubProvider from "next-auth/providers/github"
 import TwitterProvider from "next-auth/providers/twitter"
+import KakaoProvider from "next-auth/providers/kakao"
 import Auth0Provider from "next-auth/providers/auth0"
 // import AppleProvider from "next-auth/providers/apple"
 
@@ -42,16 +43,46 @@ export default NextAuth({
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
+      client_id: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
+      authorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
+      scope:            'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/youtube.readonly',
+      profile(profile) {
+        return {
+          // Return all the profile information you need.
+          // The only truly required field is `id`
+          // to be able identify the account when added to a database
+        }
+      },
     }),
-    TwitterProvider({
-      clientId: process.env.TWITTER_ID,
-      clientSecret: process.env.TWITTER_SECRET,
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_ID,
+      clientSecret: process.env.FACEBOOK_SECRET,
+    }),
+    KakaoProvider({
+      clientId: process.env.KAKAO_ID,
+      clientSecret: process.env.KAKAO_SECRET,
+        id: "kakao",
+        name: "Kakao",
+        type: "oauth",
+        authorization: "https://kauth.kakao.com/oauth/authorize",
+        token: "https://kauth.kakao.com/oauth/token",
+        userinfo: "https://kapi.kakao.com/v2/user/me",
+        profile(profile) {
+          return {
+            id: profile.id,
+            name: profile.kakao_account?.profile.nickname,
+            email: profile.kakao_account?.email,
+            image: profile.kakao_account?.profile.profile_image_url,
+          }
+        },
     }),
     Auth0Provider({
       clientId: process.env.AUTH0_ID,
       clientSecret: process.env.AUTH0_SECRET,
       domain: process.env.AUTH0_DOMAIN,
+      issuer: process.env.ISSUER,
+      authorization: { params: { scope: "openid your_custom_scope" } },
     }),
   ],
   // Database optional. MySQL, Maria DB, Postgres and MongoDB are supported.
@@ -114,10 +145,38 @@ export default NextAuth({
   // when an action is performed.
   // https://next-auth.js.org/configuration/callbacks
   callbacks: {
-    // async signIn({ user, account, profile, email, credentials }) { return true },
-    // async redirect({ url, baseUrl }) { return baseUrl },
-    // async session({ session, token, user }) { return session },
-    // async jwt({ token, user, account, profile, isNewUser }) { return token }
+     //async signIn({ user, account, profile, email, credentials }) { return true },
+     async signIn({ user, account, profile, email, credentials }) {
+      const isAllowedToSignIn = true
+      if (isAllowedToSignIn) {
+        return true
+      } else {
+        // Return false to display a default error message
+        return false
+        // Or you can return a URL to redirect to:
+        // return '/unauthorized'
+      }
+     },
+     async redirect({ url, baseUrl }) { return baseUrl },
+    //  redirect({ url, baseUrl   }) {
+    //   if (url.startsWith(baseUrl)) return url
+    //   // Allows relative callback URLs
+    //   else if (url.startsWith("/")) return new URL(url, baseUrl).toString()
+    //   return baseUrl
+    // },
+     async session({ session, token, user }) {
+      // Send properties to the client, like an access_token from a provider.
+      session.accessToken = token.accessToken
+      return session
+      },
+     async jwt({ token, user, account, profile, isNewUser }) { return token },
+    //  async jwt({ token, account }) {
+    //   // Persist the OAuth access_token to the token right after signin
+    //   if (account) {
+    //     token.accessToken = account.access_token
+    //   }
+    //   return token
+    // },
   },
 
   // Events are useful for logging
